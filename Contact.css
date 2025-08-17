@@ -1,0 +1,31 @@
+.contact {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #1e3a8a, #3b82f6);
+  color: white;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.contact .btn-primary {
+  background-color: #dc2626;
+  padding: 18px 50px;
+  font-size: 1.25rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact .btn-primary:hover {
+  background-color: #b91c1c;
+}

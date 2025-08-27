@@ -1,0 +1,481 @@
+/* Modern Grid Success Stories */
+.success-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #eff6ff 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header Section */
+.success-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.success-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #8f2828;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.success-section-header p {
+  font-size: 1.25rem;
+  color: #03104b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(143, 40, 40, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: cardSlideUp 0.8s ease-out forwards;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8f2828, #a53e3e, #8f2828);
+  border-radius: 24px 24px 0 0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 32px 64px rgba(0, 0, 0, 0.12),
+    0 16px 32px rgba(143, 40, 40, 0.1);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.student-avatar {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #8f2828, #a53e3e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  box-shadow: 0 8px 24px rgba(143, 40, 40, 0.3);
+  animation: avatarPop 0.6s ease-out;
+}
+
+.avatar-initials {
+  position: relative;
+  z-index: 2;
+}
+
+.avatar-ring {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 2px solid rgba(143, 40, 40, 0.2);
+  border-radius: 50%;
+  animation: ringPulse 2s ease-in-out infinite;
+}
+
+.quote-icon {
+  color: rgba(143, 40, 40, 0.2);
+  animation: quoteFloat 3s ease-in-out infinite;
+}
+
+/* Card Content */
+.card-content {
+  opacity: 0;
+  animation: contentFadeIn 0.8s ease-out 0.3s forwards;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #374151;
+  font-style: italic;
+  margin: 0 0 1.5rem 0;
+  position: relative;
+}
+
+.testimonial-text::before {
+  content: '"';
+  font-size: 4rem;
+  color: rgba(143, 40, 40, 0.08);
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  font-family: serif;
+  line-height: 1;
+}
+
+.student-info {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1.25rem;
+}
+
+.student-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.student-program {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+/* Star Rating */
+.star-rating {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  color: #fbbf24;
+  fill: #fbbf24;
+  transition: all 0.3s ease;
+  animation: starGlow 2s ease-in-out infinite;
+}
+
+.testimonial-card:hover .star {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.5));
+}
+
+/* Card Decoration */
+.card-decoration {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(143, 40, 40, 0.05), rgba(165, 62, 62, 0.05));
+  border-radius: 50%;
+  animation: decorationFloat 4s ease-in-out infinite;
+}
+
+/* Background Shapes */
+.background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(143, 40, 40, 0.03);
+  animation: shapeFloat 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes avatarPop {
+  0% {
+    transform: scale(0) rotate(-180deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(-90deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+}
+
+@keyframes quoteFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes contentFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes starGlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes decorationFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+}
+
+@keyframes shapeFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+  }
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .success-section {
+    padding: 3rem 1rem;
+  }
+  
+  .success-section-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .success-section-header p {
+    font-size: 1.1rem;
+  }
+  
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  
+  .student-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 1.1rem;
+  }
+  
+  .testimonial-text {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .success-section {
+    padding: 2rem 1rem;
+  }
+  
+  .success-section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .success-section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .success-section-header p {
+    font-size: 1rem;
+  }
+  
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.25rem;
+    border-radius: 20px;
+  }
+  
+  .card-header {
+    margin-bottom: 1.25rem;
+  }
+  
+  .student-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+  
+  .quote-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .student-name {
+    font-size: 1.1rem;
+  }
+  
+  .student-program {
+    font-size: 0.9rem;
+  }
+  
+  .star {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .background-shapes {
+    display: none;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 320px) {
+  .testimonial-card {
+    padding: 1rem;
+  }
+  
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+  
+  .student-name {
+    font-size: 1rem;
+  }
+  
+  .student-program {
+    font-size: 0.85rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .testimonial-card:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .testimonial-card {
+    border: 2px solid #000;
+  }
+  
+  .success-section-header h2 {
+    color: #000;
+  }
+  
+  .testimonial-text {
+    color: #000;
+  }
+  
+  .student-name {
+    color: #000;
+  }
+}

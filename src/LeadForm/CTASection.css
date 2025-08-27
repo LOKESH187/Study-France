@@ -1,0 +1,88 @@
+.cta-section {
+  padding: 4rem 1.5rem;
+  background: linear-gradient(to right, #0055a5, #e63946); /* france-blue → france-red */
+  text-align: center;
+  color: white;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-subtitle {
+  font-size: 1.2rem;
+  color: #dce6f7;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .cta-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.cta-btn .icon {
+  margin-right: 0.5rem;
+}
+
+/* Primary Button */
+.cta-btn.primary {
+  background: white;
+  color: #0055a5;
+  border: none;
+}
+
+.cta-btn.primary:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Secondary Button */
+.cta-btn.secondary {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+}
+
+.cta-btn.secondary:hover {
+  background: white;
+  color: #0055a5;
+}
+
+/* Contact Info */
+.cta-contact {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #dce6f7;
+}
+
+.cta-contact .icon {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}

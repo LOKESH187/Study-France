@@ -1,0 +1,553 @@
+/* Enhanced Expert Team Section */
+.expert-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.expert-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header Section */
+.expert-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.header-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: decorationSlide 1.2s ease-out 0.3s forwards;
+}
+
+.decoration-line {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0055a4, transparent);
+}
+
+.header-decoration svg {
+  color: #0055a4;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+.expert-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #003c61;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.expert-header p {
+  font-size: 1.25rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.expert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Expert Cards */
+.expert-card {
+  position: relative;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 85, 164, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: cardSlideUp 0.8s ease-out forwards;
+  overflow: hidden;
+}
+
+.expert-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0055a4, #003c61, #0055a4);
+  border-radius: 24px 24px 0 0;
+}
+
+.expert-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 32px 64px rgba(0, 0, 0, 0.12),
+    0 16px 32px rgba(0, 85, 164, 0.1);
+}
+
+/* Card Background */
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.03;
+}
+
+.background-pattern {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, #0055a4 2px, transparent 2px),
+    radial-gradient(circle at 80% 70%, #003c61 1px, transparent 1px);
+  background-size: 40px 40px, 60px 60px;
+  animation: patternMove 10s linear infinite;
+}
+
+/* Expert Avatar */
+.expert-avatar {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #0055a4, #003c61);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 85, 164, 0.3);
+  animation: avatarPop 0.8s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+.avatar-initials {
+  position: relative;
+  z-index: 3;
+}
+
+.avatar-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 3px solid rgba(0, 85, 164, 0.2);
+  border-radius: 50%;
+  animation: ringPulse 2s ease-in-out infinite;
+}
+
+.achievement-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #ed2939, #c41e3a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(237, 41, 57, 0.3);
+  animation: badgeBounce 0.6s ease-out 0.5s both;
+  z-index: 3;
+}
+
+/* Expert Content */
+.expert-content {
+  opacity: 0;
+  animation: contentFadeIn 0.8s ease-out 0.4s forwards;
+}
+
+.expert-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.expert-title {
+  color: #0055a4;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.expert-experience {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Tags */
+.expert-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: scale(0);
+  animation: tagPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  transition: all 0.3s ease;
+}
+
+.tag-blue {
+  background: linear-gradient(135deg, rgba(0, 85, 164, 0.1), rgba(0, 60, 97, 0.1));
+  color: #0055a4;
+  border: 1px solid rgba(0, 85, 164, 0.2);
+}
+
+.tag-red {
+  background: linear-gradient(135deg, rgba(237, 41, 57, 0.1), rgba(196, 30, 58, 0.1));
+  color: #ed2939;
+  border: 1px solid rgba(237, 41, 57, 0.2);
+}
+
+.expert-card:hover .tag {
+  transform: scale(1.05) translateY(-2px);
+}
+
+/* Card Shine Effect */
+.card-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.expert-card:hover .card-shine {
+  left: 100%;
+}
+
+/* Background Elements */
+.background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 85, 164, 0.03);
+  animation: shapeFloat 8s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.shape-3 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 60%;
+  animation-delay: 6s;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes decorationSlide {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes cardSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes patternMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 40px 40px, 60px 60px;
+  }
+}
+
+@keyframes avatarPop {
+  0% {
+    transform: scale(0) rotate(-180deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(-90deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.1;
+  }
+}
+
+@keyframes badgeBounce {
+  0% {
+    transform: scale(0) rotate(-180deg);
+  }
+  70% {
+    transform: scale(1.2) rotate(-90deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes contentFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tagPop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shapeFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .expert-section {
+    padding: 3rem 1rem;
+  }
+  
+  .expert-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .expert-header p {
+    font-size: 1.1rem;
+  }
+  
+  .expert-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .expert-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    font-size: 1.7rem;
+  }
+  
+  .expert-name {
+    font-size: 1.3rem;
+  }
+  
+  .decoration-line {
+    width: 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .expert-section {
+    padding: 2rem 1rem;
+  }
+  
+  .expert-header {
+    margin-bottom: 3rem;
+  }
+  
+  .expert-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .expert-header p {
+    font-size: 1rem;
+  }
+  
+  .expert-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .expert-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 20px;
+  }
+  
+  .avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    font-size: 1.4rem;
+  }
+  
+  .achievement-badge {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .achievement-badge svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .expert-name {
+    font-size: 1.2rem;
+  }
+  
+  .expert-title {
+    font-size: 1rem;
+  }
+  
+  .expert-experience {
+    font-size: 0.9rem;
+  }
+  
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .background-elements {
+    display: none;
+  }
+  
+  .decoration-line {
+    width: 30px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 320px) {
+  .expert-card {
+    padding: 1.25rem 1rem;
+  }
+  
+  .expert-name {
+    font-size: 1.1rem;
+  }
+  
+  .expert-experience {
+    font-size: 0.85rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .expert-card:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .expert-card {
+    border: 2px solid #000;
+  }
+  
+  .expert-header h2 {
+    color: #000;
+  }
+  
+  .expert-name {
+    color: #000;
+  }
+  
+  .expert-title {
+    color: #000;
+  }
+}
